@@ -1,0 +1,54 @@
+<p>user-form works!</p>
+
+
+<h1></h1>
+
+<span>{{title}}</span>
+<br>
+<br>
+<span>First Name</span>
+<input type="text"[(ngModel)] = user.firstname
+ placeholder="Enter First name"/>
+<br>
+<br>
+<span>Last Name</span>
+<input type="text"[(ngModel)] = user.lastname
+ placeholder="Enter last name"/>
+<br>
+<br>
+<span>Age</span>
+<input type="text"[(ngModel)] = user.age
+ placeholder="Enter Age"/>
+
+ <div class="form-check">
+
+    <input class="form-check-input" [(ngModel)] = user.Gender
+    value="Male"type="radio" name="gender" id="male">
+    <label class="form-check-label" for="male">
+     Male
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" [(ngModel)] = user.Gender
+    value="Female"type="radio" name="gender" id="female">
+    <label class="form-check-label" for="female">
+     Female
+    </label>
+  </div>
+ <button (click)="save()">Save User</button>
+
+ <ol class="list-group list-group-numbered">
+    <li *ngFor="let u of users; index as i"
+     class="list-group-item">
+        <span>{{u.firstname}}</span>
+        <br>
+        <span>{{u.lastname}}</span>
+        <br>
+        <span>{{u.age}}</span>
+        <br>
+        <span>{{u.Gender}</span>
+        <br>
+        <button type="button"(click)="deleteRow(u , i)" style="margin-right: 500;" class="btn btn-danger">Delete</button>
+    </li>
+
+    </ol>
